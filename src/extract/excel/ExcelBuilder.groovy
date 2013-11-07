@@ -44,17 +44,17 @@ class ExcelBuilder {
             return value
         }
  
- 		if (fileName.endsWith('.xlsx')) {
- 			println(fileName)
- 			new File(fileName).withInputStream{is->
-            	workbook = new XSSFWorkbook(is)
-       		}
-		} else {
-			println(fileName)
-			new File(fileName).withInputStream{is->
-            	workbook = new HSSFWorkbook(is)
-        	}
-		}
+        if (fileName.endsWith('.xlsx')) {
+            println(fileName)
+            new File(fileName).withInputStream{is->
+                workbook = new XSSFWorkbook(is)
+            }
+        } else {
+            println(fileName)
+            new File(fileName).withInputStream{is->
+                workbook = new HSSFWorkbook(is)
+            }
+        }
        
     }
  
